@@ -17,6 +17,10 @@ const AddFriend = () => {
 
     const onClickSearch = async (e) => {
         e.preventDefault();
+        if(searchInput==""){
+            alert('Enter input to search');
+            return;
+        }
         let result = await fetch('http://localhost:8080/search', {
             method: 'POST',
             headers: {

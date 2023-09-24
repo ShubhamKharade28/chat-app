@@ -10,14 +10,15 @@ export default function ChatId({params}) {
     const user2 = params.id;
 
     const [ Messages, setMessages ] = useState([]);
-    
+    const [ chatExist, setChatExist ] = useState(true);
+    const [ chatId, setChatId ] = useState("");
 
     useEffect(() => {
         const getData = async () => {
             let chat = await fetch('http://localhost:8080/chat', {
                 method: "POST",
                 body: JSON.stringify({
-                    user1: user,
+                    user1,
                     user2,
                 }),
                 headers: {
@@ -28,10 +29,9 @@ export default function ChatId({params}) {
             if(chat.error){
                 alert("Error occurred")
             }else if(!chat.found){
-                alert("Chat not found")
-            }else if(chat.empty){
-                alert("No messages");
+                setChatExist(false);
             }else{
+                setChatExist(true);
                 setChatId(chat.chatId);
                 setMessages(chat.messages);
             }
@@ -54,13 +54,33 @@ export default function ChatId({params}) {
         e.preventDefault();
         if(messageInput == "") return;
 
+        if(!chatExist){
+            let createRes = await fetch(`http://localhost:8080/chat/create`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user1,
+                    user2,
+                })
+            });
+            createRes = await createRes.json();
+            if(createRes.error){
+                alert(createRes.error);
+                return;
+            }else{
+                setChatId(createRes.chatId);  
+            }
+        }
+
         let message = {
             sender: user1,
             receiver: user2,
             payload: messageInput,
         };
 
-        let res = await  fetch('http://localhost:8080/message/send', {
+        let res = await fetch('http://localhost:8080/message/send', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

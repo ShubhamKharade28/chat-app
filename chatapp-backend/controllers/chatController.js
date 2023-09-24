@@ -1,7 +1,6 @@
 const Chat = require('../models/Chat');
 
 const createChat = async (req,res,next) => {
-   
     try {
         const user1 = req.body.user1;
         const user2 = req.body.user2;
@@ -22,7 +21,6 @@ const createChat = async (req,res,next) => {
         const result = await chat.save();
         
         res.json({
-            chatInitiated: true,
             chatId: result._id,
         });
     } catch (error) {
@@ -115,10 +113,10 @@ const getAllChats = async (req,res,next) => {
 
         const chats = [];
         result.forEach(element => {
-            if(user1 == element.username){
-                chats.push(user2);
+            if(user == element.user1){
+                chats.push(element.user2);
             }else{
-                chats.push(user1);
+                chats.push(element.user1);
             }
         });
 

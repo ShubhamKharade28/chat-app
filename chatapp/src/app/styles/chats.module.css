@@ -50,7 +50,10 @@
 .messages {
     @apply flex flex-col justify-start gap-2 h-full p-4 
     overflow-y-scroll scroll-smooth;
+    scrollbar-width: none;
 }
+
+
 
 .messages::-webkit-scrollbar {
     display: none;
