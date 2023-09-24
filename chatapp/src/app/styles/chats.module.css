@@ -1,0 +1,100 @@
+
+.all_chats {
+    @apply flex flex-col gap-2 lg:gap-3 justify-start items-center text-black w-full px-1 lg:px-3;
+}
+
+.chat_preview {
+    @apply text-black flex flex-row justify-start w-full gap-10 items-center cursor-pointer
+        bg-purple-100 hover:bg-purple-300 rounded-lg px-2 md:px-3 lg:px-5 py-2 md:py-3;
+    max-width:500px;
+}
+
+.profile_photo {
+    height:50px;
+    width:50px;
+    @apply mx-4 bg-purple-900 rounded-full; 
+}
+
+.chat_name {
+    @apply text-lg text-purple-950 font-bold;
+}
+
+.chat {
+    @apply flex flex-col mx-auto w-full md:w-1/2 lg:w-2/5
+        bg-purple-300 justify-between h-screen;
+}
+
+.chatNav {
+    @apply flex flex-row w-full justify-between text-lg items-center
+        bg-purple-900 text-white py-1 px-1;
+}
+
+.toHome {
+    @apply text-xl md:text-2xl lg:text-3xl hover:bg-purple-700
+        ml-2 px-5 py-2 rounded-xl;
+}
+
+.toProfile {
+    @apply font-bold flex flex-row justify-start items-center gap-16 w-4/5
+        hover:bg-purple-700 py-1 px-3 rounded-lg;
+}
+
+.profilePhoto {
+    @apply h-10 w-10 bg-purple-300 rounded-full;
+}
+
+.profileName {
+    @apply w-1/2;
+}
+
+.messages {
+    @apply flex flex-col justify-start gap-2 h-full p-4 
+    overflow-y-scroll scroll-smooth;
+}
+
+.messages::-webkit-scrollbar {
+    display: none;
+}
+
+.message {
+    @apply w-full ;
+}
+
+.messageSent {
+    @apply flex justify-end;
+}
+
+.messageReceived {
+    @apply flex justify-start;
+}
+
+.messageLeft, .messageRight {
+    @apply px-3 py-2 rounded ;
+    max-width: 75%;
+}
+
+.messageLeft {
+    @apply bg-purple-900 text-white;
+}
+
+.messageRight {
+    @apply bg-purple-100 text-purple-950;
+}
+
+
+.messageToSend {
+    @apply flex flex-row justify-around gap-3 p-3;
+}
+
+.messageInput {
+    @apply w-full rounded-lg text-lg border-0 outline-none px-4 py-2;
+}
+
+.messageInput::-webkit-input-placeholder {
+    @apply text-purple-950 text-opacity-50;
+}
+
+.sendBtn {
+    @apply w-14 h-11 bg-purple-950 text-purple-100 rounded-lg
+        text-3xl align-middle pb-1 hover:bg-purple-800 font-extrabold;
+}

@@ -1,0 +1,6 @@
+
+.newchat {
+    @apply flex flex-col justify-start items-center py-2 gap-3 lg:gap-4 px-4
+        w-full md:w-4/6 lg:w-1/2 mx-auto md:py-3 md:px-5 mt-7;
+    max-width:550px;
+}

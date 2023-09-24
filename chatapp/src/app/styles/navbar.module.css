@@ -1,0 +1,14 @@
+
+
+.nav {
+    @apply flex flex-row text-lg justify-center w-full h-fit py-2 md:py-3
+        bg-purple-900 text-white;
+}
+
+.nav_item {
+    @apply px-5 py-2 lg:px-16 font-bold text-lg lg:text-xl;
+}
+
+.nav_item:hover {
+    transition: all ease 0.5s;
+}

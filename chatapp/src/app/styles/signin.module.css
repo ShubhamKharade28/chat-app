@@ -1,0 +1,31 @@
+
+.signin {
+    @apply flex flex-col justify-start items-center gap-12 my-10
+     w-full md:w-4/6 lg:w-1/2 mx-auto px-4 h-screen;
+}
+
+.heading {
+    @apply text-4xl text-white font-bold my-7;
+    -webkit-text-stroke: 1px rgb(59,7,100);
+}
+
+.signin_form {
+    @apply flex flex-col justify-start items-center gap-7 w-5/6 lg:w-4/6;
+}
+
+.signin_form input {
+    @apply px-4 py-3 outline-none w-full rounded placeholder:text-purple-400 text-purple-900;
+    border-bottom: 1px solid rgba(89, 28, 135, 0.568);
+}
+
+.login_btn {
+    @apply px-6 py-2 bg-purple-900 text-white rounded-lg hover:bg-purple-700 font-bold text-lg mt-4 lg:mt-7;
+}
+
+.to_signup {
+    @apply flex flex-col justify-start items-center gap-4;
+}
+
+.to_signup_btn {
+    @apply text-purple-950 font-bold hover:text-purple-700 border-b-2 border-b-purple-950 px-1 text-lg;
+}

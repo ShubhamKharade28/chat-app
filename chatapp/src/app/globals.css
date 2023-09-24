@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background:white ;
+  color: black;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+.main {
+  @apply flex flex-col justify-start mx-auto items-center
+    w-full  md:w-4/6
+    lg:w-1/2;
+}
+
+* {
+  transition: all ease 0.5s;
+}
+
+.btn {
+  @apply rounded-lg px-4 py-2 border-0 text-lg;
+}
+
+.stroke {
+  -webkit-text-stroke: 1px black;
+}

@@ -1,0 +1,25 @@
+
+.profilePreview {
+    @apply flex flex-row gap-2 h-full justify-between items-center px-2 lg:px-3
+     bg-purple-100 rounded-lg py-2 hover:bg-purple-200 w-full;
+    transition: all ease 0.2s;
+}
+
+.profilePhoto {
+    @apply block rounded-full h-10 w-10 bg-purple-900 mx-2 md:mx-3 ;
+}
+
+.profileName {
+    @apply w-1/2 font-bold text-purple-950 px-1 lg:px-2 lg:text-lg
+        rounded-lg py-1 lg:py-2;
+}
+
+.profilePreview button {
+    @apply px-3 py-2 lg:px-4 lg:py-2 bg-purple-300 text-purple-950 font-bold rounded
+        hover:bg-purple-600 hover:text-purple-100;
+    transition: all ease 0.4s;
+}
+
+.profilePreview button a {
+    transition: all ease 0.2s;
+}
