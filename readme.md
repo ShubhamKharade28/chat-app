@@ -1,6 +1,6 @@
 #chat-app
 
-The ChatApp is a messengin application built on standard MERN stack in addtion to NextJs, the technology everyone should learn.
+The ChatApp is a messenging application built on standard MERN stack in addtion to NextJs, the technology everyone should learn.
 The webapp is not hosted on internet , so if you want to run it, you can clone the git repository and run it on your local host.
 
 #Steps to run app on localhost

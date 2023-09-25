@@ -29,6 +29,7 @@ const Mychats = () => {
                     return <ChatPreview 
                                 name={chat} 
                                 path={`/chat/${chat}`}
+                                key={chat}
                             />
                 })
             }

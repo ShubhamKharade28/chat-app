@@ -1,8 +1,10 @@
 "use client"
-
 import styles from '@/app/styles/chats.module.css';
 import Link from 'next/link';
 import { useEffect, useState,useRef } from 'react';
+
+// import io from 'socket.io-client';
+// const socket = io('http://localhost:8080/message');
 
 export default function ChatId({params}) {
 
@@ -14,6 +16,9 @@ export default function ChatId({params}) {
     const [ chatId, setChatId ] = useState("");
 
     useEffect(() => {
+        // socket.on('connect', () => {
+        //     console.log('Connected to server');
+        // });
         const getData = async () => {
             let chat = await fetch('http://localhost:8080/chat', {
                 method: "POST",
@@ -37,6 +42,9 @@ export default function ChatId({params}) {
             }
         }
         getData();
+        setInterval(() => {
+            getData();
+        }, 1000);
     }, []);
 
     const [ messageInput, setMessageInput ] = useState("");

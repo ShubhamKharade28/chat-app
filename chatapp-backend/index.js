@@ -39,18 +39,6 @@ const io = socketIo(server, {
 
 io.on('connection', (socket) => {
     console.log('A user connected');
-
-    io.emit('message', 'Hello clients');
-
-    socket.on('message', (data) => {
-        console.log('Received message from client');
-        console.log(data);
-    })
-
-
-    socket.on('disconnect', () => {
-        console.log('A user disconnected!');
-    })
 })
 
 const runServer = async () => {
