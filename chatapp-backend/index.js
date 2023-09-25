@@ -30,22 +30,28 @@ app.get('/', (req,res) => {
 })
 
 const server = http.createServer(app);
-// const io = socketIo(server);
+const io = socketIo(server, {
+    cors: {
+        origin: "http://localhost:3000",
+        methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    }
+});
 
-// io.on('connection', (socket) => {
-//     console.log('A user connected');
+io.on('connection', (socket) => {
+    console.log('A user connected');
 
-//     io.emit('message', 'Hello clients');
+    io.emit('message', 'Hello clients');
 
-//     socket.on('message', (data) => {
-//         console.log('Received message from client');
-//     })
+    socket.on('message', (data) => {
+        console.log('Received message from client');
+        console.log(data);
+    })
 
 
-//     socket.on('disconnect', () => {
-//         console.log('A user disconnected!');
-//     })
-// })
+    socket.on('disconnect', () => {
+        console.log('A user disconnected!');
+    })
+})
 
 const runServer = async () => {
     await connectDB();
